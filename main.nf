@@ -68,7 +68,7 @@ process quantify_IR {
 	script:
     """
 	IRFinder BAM \
-        -r $IRFinder_ref \
+        -r IRFinder_ref/${params.genome_name} \
         -d ${meta.sample} \
         $bam
 	"""
