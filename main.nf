@@ -21,7 +21,7 @@ log.info """
 
 
  process build_ref {
-	publishDir "${params.results_dir}/IRFinder_ref", mode: 'copy'
+	publishDir "${params.results_dir}/", mode: 'copy'
 	
 	input:
 	path(fasta)
@@ -59,7 +59,7 @@ process quantify_IR {
 	
 	input:
 	tuple val(meta), path(bam), path(bam_index)
-	path(IRFinder_ref)
+	path("IRFinder_ref/${params.genome_name}")
 
 	
 	output:
